@@ -26,7 +26,7 @@ class PlayState extends FlxState
 		
 		FlxG.camera.bgColor = FlxColor.WHITE;
 		
-		player = new Player(10, 350);
+		player = new Player(10 + FlxG.random.int(0, 40), 350);
 		add(player);
 		
 		var ground:FlxSprite = new FlxSprite(0, player.y + player.height).makeGraphic(FlxG.width, 10, FlxColor.BLACK);
@@ -42,7 +42,7 @@ class PlayState extends FlxState
 		
 		if (NGio.isLoggedIn)
 		{
-			if (NG.core.user.name == "phantomarcade")
+			if (NG.core.user.name == "PhantomArcade")
 			{
 				var medal = NG.core.medals.get(56060);
 				if (!medal.unlocked)
